@@ -1,5 +1,5 @@
 import HomePage from "../pages/Home/Home";
-import Search from "../pages/Search/index";
+import Search from "../pages/Search/Search";
 
 const routes = [
   {
