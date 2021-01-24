@@ -1,15 +1,23 @@
 import React, { useState, useEffect } from 'react';
+import { useHistory } from "react-router-dom";
 import App from '../../assets/css/App.css';
 import RegisterForm from "../../components/RegisterForm";
 import Modal from "../../components/Modal";
 import { FaSearch } from "react-icons/fa";
  
 function HomePage() {
+  const [term, setTerm] = useState("");
+  const history = useHistory();
+  
   const modalRef = React.useRef();
 
   const openModal = () => {
     modalRef.current.openModal()
   };
+
+  const handleSearchButton = () => {
+    history.push(`/results?q=${term}`)
+  }
 
   document.title = "Gestão de Processos";
 
@@ -30,7 +38,8 @@ function HomePage() {
               
               <button 
               type="button"
-              className="search-icon-button">
+              className="search-icon-button"
+              onClick={handleSearchButton}>
                 <FaSearch className="search-icon"/>
               </button>
             </form>

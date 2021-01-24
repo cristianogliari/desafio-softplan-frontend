@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-// import AxiosActions from "../actions/AxiosActions";
+import AxiosActions from "../actions/AxiosActions";
 import axios from "axios";
 import BASE_API from "../utils/constants";
 
@@ -15,11 +15,13 @@ function RegisterForm(){
   };
 
   function handleSaveProcess() {
-    axios.post(`${BASE_API}/processo`, {
+    const data = {
       interessados: interesteds,
       descricao: description,
-      assunto: subject
-    })
+      assunto: subject      
+    };
+
+    const response = AxiosActions.createProcess(data);
   };
 
   return (
@@ -46,10 +48,6 @@ function RegisterForm(){
           <input type="text" name="description" value={description} onChange={(event) => setDescription(event.target.value)} placeholder="Digite a descrição..."></input>
         </div>
         <button type="submit" onClick={handleSaveProcess}>Salvar</button>
-
-
-
-
       </div>
     </React.Fragment>
   )

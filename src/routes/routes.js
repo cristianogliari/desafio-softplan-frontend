@@ -8,7 +8,7 @@ const routes = [
     exact: true
   },
   {
-    path: "/search",
+    path: "/results",
     component: Search,
     exact: true
   }

@@ -34,7 +34,6 @@ const Modal = forwardRef((props,ref) => {
   };
 
   return null;
-
 });
 
 export default Modal;
