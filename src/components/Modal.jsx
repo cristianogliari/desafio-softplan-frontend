@@ -25,8 +25,11 @@ const Modal = forwardRef((props,ref) => {
       <div className={"modal-wrapper"}>
         <div onClick={close} className={"modal-backdrop"} />
         <div className={"modal-box"}>
-          <div className="closeModal" onClick={close}>
-            <IoCloseOutline className="close-button"/>
+          <div className="modal-header">
+            <h1 className="title modal-title">{props.title}</h1>
+            <div className="closeModal" onClick={close}>
+              <IoCloseOutline className="close-button"/>
+            </div>
           </div>
           {props.children}
         </div>

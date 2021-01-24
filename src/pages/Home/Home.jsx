@@ -4,6 +4,7 @@ import App from '../../assets/css/App.css';
 import RegisterForm from "../../components/RegisterForm";
 import Modal from "../../components/Modal";
 import { FaSearch } from "react-icons/fa";
+import SearchInput from "../../components/SearchInput";
  
 function HomePage() {
   const [term, setTerm] = useState("");
@@ -51,8 +52,8 @@ function HomePage() {
         </div>
       </div>
 
-      <Modal ref={modalRef}>
-        <RegisterForm />
+      <Modal ref={modalRef} title="Cadastro de processo">
+        <RegisterForm button="SALVAR"/>
       </Modal>
 
     </React.Fragment>
