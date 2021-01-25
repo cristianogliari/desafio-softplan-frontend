@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import '../../assets/css/App.css';
+import React, { useState, useEffect } from "react";
+import "../../assets/css/App.css";
+import "../../assets/css/SearchInputHome.css";
 import RegisterForm from "../../components/RegisterForm";
 import Modal from "../../components/Modal";
 import SearchInput from "../../components/SearchInput";

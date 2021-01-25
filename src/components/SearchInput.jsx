@@ -24,7 +24,7 @@ function SearchInput(props){
           type="button"
           className="search-icon-button"
           onClick={handleSearchButton}>
-            <FaSearch className="search-icon"/>
+          <FaSearch className="search-icon"/>
         </button>
       </form>
     </React.Fragment>

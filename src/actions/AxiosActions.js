@@ -11,6 +11,10 @@ const AxiosActions = {
     return axios.get(`${BASE_API}/processo?q=${term}`)
   },
 
+  searchProcessWithId : (id) => {
+    return axios.get(`${BASE_API}/processo/${id}`)
+  },
+
   updateProcess : (id, data) => {
     return axios.put(`${BASE_API}/processo/${id}`, data);
   },

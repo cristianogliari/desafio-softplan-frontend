@@ -34,7 +34,7 @@ function RegisterForm(props){
 
   return (
     <React.Fragment>
-      <form className="registerForm">
+      <div className="registerForm">
         <div className="subtitle-align">
           <label className="subtitle-form color-black-B">Assunto</label><br/>
           <input type="text" className="top-input-form" autoComplete="off" name="subject" value={subject} onChange={(event) => setSubject(event.target.value)} placeholder="Digite o assunto..."></input>
@@ -59,7 +59,7 @@ function RegisterForm(props){
           <input type="text" className="form-description" autoComplete="off" name="description" value={description} onChange={(event) => setDescription(event.target.value)} placeholder="Digite a descrição..."></input>
         </div>
         <button className="form-button-send" type="submit" onClick={handleSaveProcess}>{props.button}</button>
-      </form>
+      </div>
     </React.Fragment>
   )
 };
