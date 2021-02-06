@@ -74,9 +74,12 @@ header {
 
 .card {
   display: flex;
-  margin-left: 159px;
-  margin-right: 159px;
-  margin-top: 35px;
+  width: 100%;
+
+  margin-bottom: 35px;
+
+  padding-top: 15px;
+  padding-bottom: 15px;
 
   box-shadow: rgb(0 0 0 / 19%) 0px 1px 4px 0px;
   background-color: rgb(255, 255, 255);
@@ -85,7 +88,9 @@ header {
 
 .card-content {
   display: flex;
+  width: 100%;
   margin-left: 50px;
+  margin-right: 50px;
 }
 
 .card-img {
@@ -98,7 +103,8 @@ header {
   margin-top: auto;
   margin-bottom: auto;
   flex: 1;
-  width: 200px;
+  /* width: 200px; */
+  margin-left: 15px;
 } 
 
 .subtitle-card {
@@ -112,4 +118,99 @@ header {
   white-space: nowrap; 
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+main {
+  display: flex;
+  /* justify-content: space-around; */
+  margin-left: 158px;
+  margin-right: 158px;
+}
+
+.card_selected {
+  box-shadow: rgb(0 0 0 / 19%) 0px 1px 4px 0px;
+  border: 0.5px solid #005b95;
+}
+
+/* Process Details */
+
+.process-details {
+  width: 100%;
+  margin-top: 35px;
+  margin-left: 26px;
+
+  box-shadow: rgb(0 0 0 / 19%) 0px 1px 4px 0px;
+  background-color: rgb(255, 255, 255);
+  border: 0.5px solid rgb(210, 210, 210);
+}
+
+.card-400 {
+  width: 400px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font-size: 14px;
+}
+
+/* Product Details*/
+
+.pd-header,
+.pd-interesteds,
+.pd-description,
+.pd-buttons {
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.pd-header {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 15px;
+}
+
+.pd-header-content {
+  width: 100%;
+}
+
+.pd-header-top {
+  width: 100%;
+  margin-left: 15px;
+  display: flex;
+}
+
+.pd-header-top-content {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.pd-buttons-align {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.pd-remove-button {
+  margin-right: 10px;
+}
+
+.close-process-details {
+  margin-right: 10px;
+}
+
+.pd-header-bottom-content {
+  width: 100%;
+  margin-top: 10px;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.label.pd-subtitle {
+  font-size: 14px;
+  font-weight: bold;
+  color: #757575;
+} 
+
+.close-process-details-x {
+  cursor: pointer;
 }

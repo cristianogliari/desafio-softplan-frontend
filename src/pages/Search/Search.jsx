@@ -16,6 +16,7 @@ function Search(){
   const [newTerm, setNewTerm] = useState("");
   const [appear, setAppear] = useState(false);
   const [processClick, setProcessClick] = useState("");
+  const [selected, setSelected] = useState(false);
   const useQuery = new URLSearchParams(useLocation().search);
   const query = useQuery;
   const term = query.get("q");
@@ -48,7 +49,7 @@ function Search(){
           </div>
         </header>
         <main>
-          <div className="content">
+          <div className={appear ? "content card-400" : "content"}>
             {processList.map((info) => (
             <Card 
               info={info}
@@ -58,12 +59,19 @@ function Search(){
               subject={info.assunto}
               interested={info.interessados[0]}
               setAppear={setAppear}
+              appear={appear}
               setProcessClick={setProcessClick}
+              selected={selected}
+              setSelected={setSelected}
             />
             ))}
           </div>
           {appear && 
-            <ProcessDetails processClick={processClick}/>
+            <ProcessDetails 
+              processClick={processClick}
+              appear={appear}
+              setAppear={setAppear}
+            />
           }
         </main>
       </div>

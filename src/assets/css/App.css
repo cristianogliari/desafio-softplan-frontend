@@ -139,5 +139,10 @@ body {
 }
 
 .content {
+  width: 100%;
   margin-bottom: 50px;
+}
+
+.dp-none {
+  display: none;
 }

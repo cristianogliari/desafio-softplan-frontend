@@ -7,9 +7,10 @@ function Card(props){
     <div className="card" key={props.key} onClick={() => 
       {props.setAppear(true)
        props.setProcessClick(props.info.id)
+       props.setSelected(true)
       }}>
 
-      <div className="card-img">
+      <div className={props.appear ? "dp-none" : "card-img"}>
         <img src={imgCard} alt="card"></img>
       </div>
       <div className="card-content">
@@ -31,7 +32,7 @@ function Card(props){
             <span className="process-info">{props.interested}</span>
           </div>
         </div>
-        <div className="card-content-info">
+        <div className={props.appear ? "dp-none" : "card-content-info"}>
           <label className="subtitle-card">Descrição</label>
           <div>
             <span className="process-info">{props.description.substr(0,25)}...</span>

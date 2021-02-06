@@ -31,7 +31,7 @@ function RegisterForm(props){
     const response = AxiosActions.createProcess(data);
     clearDataState();
   };
-
+  
   return (
     <React.Fragment>
       <div className="registerForm">
