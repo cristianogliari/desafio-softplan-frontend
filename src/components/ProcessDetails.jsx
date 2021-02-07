@@ -3,13 +3,29 @@ import AxiosActions from "../actions/AxiosActions";
 import imgCard from "../assets/images/card_img.png";
 import List from "./List";
 import { IoCloseOutline } from "react-icons/io5";
+import { useHistory } from "react-router-dom";
 
 function ProcessDetails(props){
   const [processDetails, setProcessDetails] = useState({});
   const {appear, setAppear} = props;
+  const history = useHistory();
 
   const handleCloseProcessDetails = () => {
     setAppear(!appear);
+  };
+
+  const clearProcessDetails = () => {
+    setProcessDetails({});
+  };
+
+  const handleDeleteProcess = () => {
+    const id = processDetails.id;
+
+    const response = AxiosActions.deleteProcess(id);
+    setAppear(!appear);
+    clearProcessDetails();
+    history.push('/');
+    alert(`Processo ${processDetails.numero} excluído com sucesso!`)
   };
 
   useEffect(() => {
@@ -64,7 +80,7 @@ function ProcessDetails(props){
       </div>
       <div className="pd-buttons">
         <div className="pd-buttons-align">
-          <button className="pd-remove-button">REMOVER</button>
+          <button className="pd-remove-button" onClick={handleDeleteProcess}>REMOVER</button>
           <button className="pd-edit-button">EDITAR</button>
         </div>
       </div>

@@ -6,9 +6,11 @@ function List(props) {
   return (
     <>
       <label className="pd-interesteds-subtitle">Interessados</label>
-      {items?.map(info => (
-          <p className="interesteds-name">{info}</p>
-      ))}
+      <div className="interesteds-name">
+        {items?.map(info => (
+            <p>{info}</p>
+        ))}
+      </div>
     </>
   )
 };

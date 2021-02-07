@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import AxiosActions from "../actions/AxiosActions";
+import "../assets/css/RegisterFormTheme.css";
 import { useHistory } from "react-router-dom";
-import RegisterFormTheme from "../assets/css/RegisterFormTheme.css";
 
 function RegisterForm(props){
   const [subject, setSubject] = useState("");
@@ -30,6 +30,8 @@ function RegisterForm(props){
 
     const response = AxiosActions.createProcess(data);
     clearDataState();
+    history.push('/results?q=');
+    alert('Processo criado com sucesso!')
   };
   
   return (
