@@ -4,11 +4,12 @@ import "../assets/css/RegisterFormTheme.css";
 import { useHistory } from "react-router-dom";
 import { toast } from "react-toastify";
 
-function RegisterForm(props){
-  const [subject, setSubject] = useState("");
-  const [interesteds, setInteresteds] = useState([]);
+function EditForm(props){
+  const { button, processDetailsObject } = props;
+  const [subject, setSubject] = useState(`${processDetailsObject.assunto}`);
+  const [interesteds, setInteresteds] = useState([processDetailsObject.interessados]);
   const [interested, setInterested] = useState("");
-  const [description, setDescription] = useState("");
+  const [description, setDescription] = useState(`${processDetailsObject.descricao}`);
   const history = useHistory();
 
   function handleCreateInteresteds(){
@@ -23,16 +24,7 @@ function RegisterForm(props){
   }
 
   function handleSaveProcess() {
-    const data = {
-      interessados: interesteds,
-      descricao: description,
-      assunto: subject      
-    };
-
-    const response = AxiosActions.createProcess(data);
-    clearDataState();
-    history.push('/results?q=');
-    toast.success(`Processo criado com sucesso!`, {
+    toast.error('Desculpe, função não implementada', {
       position: "top-right",
       autoClose: 4000,
       hideProgressBar: false,
@@ -41,6 +33,19 @@ function RegisterForm(props){
       draggable: true,
       progress: undefined,
       });
+
+    // Aguardando back implementar
+    
+    // const id = processDetailsObject.id;
+    // const data = {
+    //   interessados: interesteds,
+    //   descricao: description,
+    //   assunto: subject      
+    // };
+
+    // const response = AxiosActions.createProcess(id, data);
+    // history.push('/results?q=');
+    // alert('Processo criado com sucesso!')
   };
   
   return (
@@ -69,10 +74,10 @@ function RegisterForm(props){
           <label className="subtitle-form color-black-B">Descrição</label><br/>
           <input type="text" className="form-description" autoComplete="off" name="description" value={description} onChange={(event) => setDescription(event.target.value)} placeholder="Digite a descrição..."></input>
         </div>
-        <button className="form-button-send" type="submit" onClick={handleSaveProcess}>{props.button}</button>
+        <button className="form-button-send" type="submit" onClick={handleSaveProcess}>{button}</button>
       </div>
     </React.Fragment>
   )
 };
 
-export default RegisterForm;
+export default EditForm;
